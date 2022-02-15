@@ -14,6 +14,8 @@
 		E5B5A91927BBB6D8007FE0B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B5A91827BBB6D8007FE0B8 /* Assets.xcassets */; };
 		E5B5A91C27BBB6D8007FE0B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B5A91A27BBB6D8007FE0B8 /* LaunchScreen.storyboard */; };
 		E5B5A91F27BBB6D8007FE0B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B5A91E27BBB6D8007FE0B8 /* main.m */; };
+		E5B5A92827BBB74F007FE0B8 /* XZTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B5A92727BBB74F007FE0B8 /* XZTableView.m */; };
+		E5B5A92B27BBB7AF007FE0B8 /* XZTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B5A92A27BBB7AF007FE0B8 /* XZTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		E5B5A91B27BBB6D8007FE0B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5B5A91D27BBB6D8007FE0B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5B5A91E27BBB6D8007FE0B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E5B5A92627BBB74F007FE0B8 /* XZTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZTableView.h; sourceTree = "<group>"; };
+		E5B5A92727BBB74F007FE0B8 /* XZTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZTableView.m; sourceTree = "<group>"; };
+		E5B5A92927BBB7AF007FE0B8 /* XZTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZTableViewCell.h; sourceTree = "<group>"; };
+		E5B5A92A27BBB7AF007FE0B8 /* XZTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,18 @@
 		E5B5A90B27BBB6D6007FE0B8 /* XZTableViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				E5B5A92527BBB70B007FE0B8 /* Others */,
+				E5B5A92627BBB74F007FE0B8 /* XZTableView.h */,
+				E5B5A92727BBB74F007FE0B8 /* XZTableView.m */,
+				E5B5A92927BBB7AF007FE0B8 /* XZTableViewCell.h */,
+				E5B5A92A27BBB7AF007FE0B8 /* XZTableViewCell.m */,
+			);
+			path = XZTableViewTest;
+			sourceTree = "<group>";
+		};
+		E5B5A92527BBB70B007FE0B8 /* Others */ = {
+			isa = PBXGroup;
+			children = (
 				E5B5A90C27BBB6D6007FE0B8 /* AppDelegate.h */,
 				E5B5A90D27BBB6D6007FE0B8 /* AppDelegate.m */,
 				E5B5A90F27BBB6D6007FE0B8 /* SceneDelegate.h */,
@@ -73,7 +91,7 @@
 				E5B5A91D27BBB6D8007FE0B8 /* Info.plist */,
 				E5B5A91E27BBB6D8007FE0B8 /* main.m */,
 			);
-			path = XZTableViewTest;
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,8 +166,10 @@
 			files = (
 				E5B5A91427BBB6D6007FE0B8 /* ViewController.m in Sources */,
 				E5B5A90E27BBB6D6007FE0B8 /* AppDelegate.m in Sources */,
+				E5B5A92827BBB74F007FE0B8 /* XZTableView.m in Sources */,
 				E5B5A91F27BBB6D8007FE0B8 /* main.m in Sources */,
 				E5B5A91127BBB6D6007FE0B8 /* SceneDelegate.m in Sources */,
+				E5B5A92B27BBB7AF007FE0B8 /* XZTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +316,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9APT9VLP86;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = XZTableViewTest/Info.plist;
+				INFOPLIST_FILE = XZTableViewTest/Others/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -323,7 +343,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9APT9VLP86;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = XZTableViewTest/Info.plist;
+				INFOPLIST_FILE = XZTableViewTest/Others/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
