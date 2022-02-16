@@ -11,7 +11,7 @@
 
 #define SCREEB_SIZE [UIScreen mainScreen].bounds.size
 
-@interface ViewController ()<XZTableViewDataSource>
+@interface ViewController ()<XZTableViewDataSource, XZTableViewDelegate>
 
 @property (nonatomic,strong) XZTableView * tableView;
 
@@ -22,20 +22,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView = [[XZTableView alloc] initWithFrame:CGRectMake(0, 20, SCREEB_SIZE.width, SCREEB_SIZE.height - 20)];
+    self.tableView = [[XZTableView alloc] initWithFrame:self.view.bounds];
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    // 假装给了数据
+    [self.tableView reloadData];
+}
+
+#pragma mark - datasource
 - (NSInteger)numberOfRows {
     return 30;
 }
 
-- (nullable __kindof XZTableViewCell *)cellForRow:(NSInteger)row {
-    NSString * ident = @"cell";
-    XZTableViewCell * cell = [[XZTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ident];
+- (nullable __kindof XZTableViewCell *)cellForRow:(NSUInteger)row {
+    NSString * identify = @"cell";
+    XZTableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:identify];
+    if (!cell) {
+        cell = [[XZTableViewCell alloc] initWithReuseIdentifier:identify];
+    }
     cell.textLabel.text = [NSString stringWithFormat:@"测试%ld", (long)row];
+    cell.tag = row;
     return cell;
+}
+
+#pragma mark - delegate
+- (void)tableView:(XZTableView *)tableView willDisplayCell:(XZTableViewCell *)cell forRow:(NSUInteger)row {
+    NSLog(@"cell(%lu)出现了", (unsigned long)row);
+}
+
+- (void)tableView:(XZTableView *)tableView didEndDisplayingCell:(XZTableViewCell *)cell forRow:(NSUInteger)row {
+    NSLog(@"cell(%lu)不见了", (unsigned long)row);
 }
 
 @end

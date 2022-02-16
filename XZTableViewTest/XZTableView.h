@@ -16,14 +16,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)numberOfRows;
 
 //获取给定的单元格
-- (nullable __kindof XZTableViewCell *)cellForRow:(NSInteger)row;
+- (nullable __kindof XZTableViewCell *)cellForRow:(NSUInteger)row;
 
 @end
 
 /// 代理协议
 @protocol XZTableViewDelegate <NSObject, UIScrollViewDelegate>
 
-- (CGFloat)tableView:(XZTableView *)tableView heightForRow:(NSInteger)row;
+@optional
+
+- (void)tableView:(XZTableView *)tableView willDisplayCell:(XZTableViewCell *)cell forRow:(NSUInteger)row;
+
+- (void)tableView:(XZTableView *)tableView didEndDisplayingCell:(XZTableViewCell *)cell forRow:(NSUInteger)row;
 
 @end
 
@@ -31,6 +35,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, nullable) id <XZTableViewDataSource> dataSource;
 @property (nonatomic, weak, nullable) id <XZTableViewDelegate> delegate;
+
+- (void)reloadData;
+
+- (nullable __kindof XZTableViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier;
 
 @end
 

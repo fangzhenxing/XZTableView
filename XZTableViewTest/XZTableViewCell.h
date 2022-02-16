@@ -9,8 +9,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XZTableViewCell : UITableViewCell
+@interface XZTableViewCell : UIView
 
+@property(nonatomic, strong)UILabel *textLabel;
+
+@property (nonatomic, readonly, copy, nullable) NSString *reuseIdentifier;
+
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 
 @end
 
